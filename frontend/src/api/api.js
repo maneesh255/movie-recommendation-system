@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:8080/api/movies';
+const API_BASE_URL = 'http://127.0.0.1:8080/api/movies';
 
 export const fetchMovies = async () => {
     const response = await axios.get(API_BASE_URL);
