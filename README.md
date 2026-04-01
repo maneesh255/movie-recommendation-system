@@ -56,6 +56,29 @@ Ensure your local MySQL server is running. The application is configured to conn
    
 CTRL + Click the local URL in the terminal to open the application in your browser!
 
+The Vite dev server now proxies `/api` requests to `http://127.0.0.1:8080`, so the frontend and backend work together locally without changing the frontend API URL.
+
+## Deployment
+
+This project is set up to deploy as a single service on Render:
+
+1. Push this repository to GitHub.
+2. Create a new Blueprint or Web Service on Render from the repo.
+3. Render will use the root `Dockerfile` and `render.yaml`.
+4. When Render prompts for environment variables, set:
+   - `SPRING_DATASOURCE_URL`
+   - `SPRING_DATASOURCE_USERNAME`
+   - `SPRING_DATASOURCE_PASSWORD`
+5. After the first successful deploy, the app will be available at your Render service URL.
+
+If the service name `movie-recommendation-system` is available in Render, the app URL is typically:
+
+```text
+https://movie-recommendation-system.onrender.com
+```
+
+Note: the repository no longer stores live database credentials. Keep your real database values only in Render environment variables.
+
 ## API Endpoints (Backend)
 - `GET /api/movies` : All movies
 - `GET /api/movies/{id}` : Single movie by id
