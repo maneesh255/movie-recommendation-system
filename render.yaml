@@ -2,6 +2,9 @@ services:
   - type: web
     name: movie-recommendation-system
     runtime: docker
+    repo: https://github.com/maneesh255/movie-recommendation-system
+    branch: main
+    autoDeployTrigger: commit
     plan: free
     dockerfilePath: ./Dockerfile
     dockerContext: .
