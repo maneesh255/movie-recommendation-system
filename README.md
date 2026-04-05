@@ -70,6 +70,17 @@ https://movie-recommendation-system.onrender.com
 
 Note: because the backend now uses an in-memory catalog, the deploy no longer depends on an external MySQL service being reachable during startup.
 
+## Vercel Frontend Deployment
+
+If you want to deploy only the React frontend on Vercel and keep the backend on Render:
+
+1. Import this repository into Vercel.
+2. Set the Vercel Root Directory to `frontend`.
+3. Add the environment variable `RENDER_BACKEND_URL` in Vercel with your Render backend URL, for example `https://movie-recommendation-system.onrender.com`.
+4. Deploy the project.
+
+The frontend includes [frontend/vercel.json](/C:/Users/ambat/OneDrive/Desktop/MovieRecommendationSystem/frontend/vercel.json), which proxies `/api/*` requests from Vercel to your Render backend and rewrites React routes to `index.html`.
+
 ## API Endpoints (Backend)
 - `GET /api/movies` : All movies
 - `GET /api/movies/{id}` : Single movie by id
