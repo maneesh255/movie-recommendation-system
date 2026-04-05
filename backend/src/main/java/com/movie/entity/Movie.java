@@ -1,13 +1,7 @@
 package com.movie.entity;
 
-import jakarta.persistence.*;
-
-@Entity
-@Table(name = "movies")
 public class Movie {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String title;
@@ -16,7 +10,6 @@ public class Movie {
     
     private Double rating;
     
-    @Column(columnDefinition = "TEXT")
     private String description;
     
     private String language;
